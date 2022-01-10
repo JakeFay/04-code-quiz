@@ -11,7 +11,6 @@ function SortLocalStorage(){
     return sortedArray;
 }
 
-//var highScores = SortLocalStorage();
 var highScores = JSON.parse(localStorage.getItem('highscores')) || [];
 
 for (var i = 0; i < highScores.length; i++){

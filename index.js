@@ -6,7 +6,7 @@ var title = document.getElementById('title')
 var options = document.getElementById('options')
 var gameOverContainer = document.getElementById('gameOver')
 var score = document.getElementById('score')
-var time = 20
+var time = 60
 var countdown;
 var index = 0
 var initials = document.getElementById('initials')
@@ -15,19 +15,21 @@ var submitInitialsBtn = document.getElementById('submitInitials')
 
 var questions = [
     {
-        qTitle: '1+1',
-        choices: ['1', '2', '3', '4'],
-        answer: '2'
+        qTitle: 'which is a data type in javascript',
+        choices: ['44', '25', '24', 'string'],
+        answer: 'string'
     },
     {
-        qTitle: '1+3',
-        choices: ['1', '2', '3', '4'],
-        answer: '4'
+        qTitle: 'what is a dom?',
+        choices: ['25', '2', 'dominic toretto', 'document object model'],
+        answer: 'document object model'
+    },
+    {
+        qTitle: 'what are the benifits of arrow functions?',
+        choices: ['none', 'they do things', '25', 'They provide us with a new and shorter syntax for declaring functions'],
+        answer: 'They provide us with a new and shorter syntax for declaring functions'
     }
 ]
-
-// on start btn click the start container is hidden and the question container is shown. A timer is start on the page. the first question is dynamically shown along with any anser options as buttons. When an answer button is clicked we need to check if the answer is correct or wrong. if wrong we need to deduct x from the time and then we need to move to the following question. 
-
 
 function start() {
     startContainer.setAttribute('class', 'hide')
@@ -85,12 +87,9 @@ function checkAnswer() {
         showQuestion()
     }
 }
-//Ifwe run out of questions or the time runs out we need to show the game over container and show the users final score. We need to capture the score and user intitals and save then to local storage. 
 
 function gameEnd() {
     clearInterval(countdown)
-    // var finalScore = document.createTextNode(time)
-    // score.appendChild(finalScore)
     score.textContent = time;
 
     startContainer.setAttribute('class', 'hide')
@@ -112,9 +111,5 @@ submitInitials.addEventListener('click', function() {
 
       localStorage.setItem('highscores', JSON.stringify(highscores));
 })
-
-
-
-
 
 startBtn.addEventListener('click', start)

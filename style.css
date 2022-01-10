@@ -1,3 +1,9 @@
 .hide{
     display: none;
 }
+* {
+    padding: 5px;
+    color:darkgoldenrod;
+    background-color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
